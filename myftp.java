@@ -7,9 +7,10 @@ import java.io.*;
 
 public class myftp {
 	public static String input() throws Exception{
+		System.out.println("mytftp> ");
 		InputStreamReader reader = new InputStreamReader(System.in);
-		BufferedReader buffer = new BufferedReader(reader);
-		return buffer.readLine();
+		BufferedReader buf = new BufferedReader(reader);
+		return buf.readLine();
 	}
 
 	public static void main(String[] args) throws Exception{
@@ -22,7 +23,6 @@ public class myftp {
 		
 		//Take the commands
 		while (true) {
-			System.out.println("mytftp> ");
 			String command = input();
 			printStream.println(command);
 			printStream.println(new File(System.getProperty("user.dir")));
@@ -35,9 +35,6 @@ public class myftp {
 			
 			System.out.println(inStr);
 			
-			if(command.equalsIgnoreCase("quit")) {
-				break;
-			}
 		}
 	}
 }
